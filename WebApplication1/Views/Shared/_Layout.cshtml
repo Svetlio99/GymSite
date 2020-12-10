@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <script type="text/javascript">
+        EventGallerySlideShowConfiguration = { "slideshow": false, "slideshowAuto": false, "slideshowSpeed": "3000", "slideshowStart": "Start Slideshow", "slideshowStop": "Stop Slideshow", "slideshowCurrent": "{current} of {total}", "slideshowRightClickProtection": false };
+        EventGalleryLightboxConfiguration = { "navigationFadeDelay": "0" };
+        EventGalleryCartConfiguration = { "add2carturl": "\/\u0433\u0430\u043b\u0435\u0440\u0438\u044f\/singleimage?layout=imagesetselection&format=raw" };
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+<script>
+    window.$ = jQuery;
+    jQuery(function () {
+     const path = location.pathname.split("/")[1];
+
+     jQuery(".menu li a[href='/" + path + "']").parent().addClass("active");
+ })</script>
+
+    <div class="container body-content">
+        <div class="sparky_wrapper">
+            <div class="sparky_full toprow">
+                <div class="container">
+                    <div class="row">
+                        <div class="cell mp_top1 span12 ">
+                            <div class="cell_pad">
+                                <div class="moduletable">
+
+
+                                    <div class="custom">
+                                        <p><a class="hours" href="#hours">РАБОТНО ВРЕМЕ: 7:30 - 22:00ч.</a></p>
+                                    </div>
+                                </div>
+                                <div class="moduletable">
+
+
+                                    <div class="custom">
+                                        <p><strong>ТЕЛЕФОН: +359 876 800 252</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="sparky_full topmenurow">
+                <header class="container">
+                    <div id="header" class="row">
+                        <div class="cell mp_logo span3">
+                            <div class="cell_pad">
+                                <div class="sparky_logo_image"><a href="/"><img src="@Url.Content("~/Images/vgym-logo.png")" alt="V Gym" /></a></div>
+                            </div>
+                        </div>					<div class="cell mp_topmenu span9 ">
+                            <div class="cell_pad">
+                                <div class="moduletable_menu">
+
+                                    <nav class="container_topmenu">
+                                        <ul class="menu navv mnu_topmenu">
+                                            <li class="item-195"><a href="/home">Начало</a></li>
+                                            <li class="item-415 deeper parent"><a href="/AboutUs">За нас</a><ul><li class="item-433"><a href="/about-us/кариери">Кариери</a></li><li class="item-484"><a href="/about-us/декларация-за-политиката">Декларация за политиката</a></li></ul></li>
+                                            <li class="item-428 deeper parent"><a href="/FitnessAndSpa">Фитнес и спа</a><ul><li class="item-429"><a href="/фитнес-и-спа/фитнес">Фитнес</a></li><li class="item-431"><a href="/фитнес-и-спа/спа-помещения">СПА помещения</a></li><li class="item-427"><a href="/фитнес-и-спа/масажи">Масажи и ритуали</a></li><li class="item-430"><a href="/фитнес-и-спа/апарати">Апарати</a></li></ul></li>
+                                            <li class="item-434"><a href="/Solarium">Солариум - Колариум</a></li>
+                                            <li class="item-447"><a href="/Pool">Басейн</a></li>
+                                            <li class="item-446"><a href="/Gallery">Галерия</a></li>
+                                            <li class="item-417 deeper parent"><a href="/prices">Цени</a><ul><li class="item-493"><a href="/prices/prices-2">Цени от 01.10.218</a></li></ul></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </header>        <div class="clr"></div>
+            </div>
+
+            @RenderBody()
+            <div class="sparky_full bottomrow">
+                <div class="container">
+                    <div class="row">
+                        <div class="cell mp_bottom1 span3 ">
+                            <div class="cell_pad">
+                                <div class="moduletable">
+                                    <h3>Защо V Gym?</h3>
+
+
+                                    <div class="custom">
+                                        <p style="text-align: left;">Във<strong> V GYM Fitness &amp; SPA</strong> ще се насладите на изключителен комфорт, висок клас оборудване и професионално отношение. За Вашата тренировка фитнес залата разполага с уреди на италианската марка <strong>Panatta</strong>, известна с отлично качество и модерен дизайн.</p>
+                                        <p style="text-align: left;">Заповядайте във <strong>V GYM Fitness &amp; SPA</strong>, защото за нас всеки клиент е специален!</p>
+                                        <p style="text-align: left;"> </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="cell mp_bottom2 span3 ">
+                            <div class="cell_pad">
+                                @*<div class="moduletable">
+                                <h3>Къде се намираме?</h3>
+                                <div id="cavas_id267" class="bt-googlemaps"></div>
+                                <script type="text/javascript">var config = { mapType: 'roadmap', width: 'auto', height: '250', cavas_id: "cavas_id267", zoom: 13, zoomControl: true, scaleControl: true, panControl: true, mapTypeControl: true, streetViewControl: true, overviewMapControl: true, draggable: true, disableDoubleClickZoom: false, scrollwheel: true, weather: 0, temperatureUnit: 'f', replaceMarkerIcon: 1, displayWeatherInfo: 1, owm_api: "", mapCenterType: "address", mapCenterAddress: "Сан Стефано Плаза, улица „Сан Стефано“, София", mapCenterCoordinate: "40.7143528, -74.0059731", enableStyle: "0", styleTitle: "BT Map", createNewOrDefault: "createNew", enableCustomInfoBox: "0", boxPosition: "-150,-155", closeBoxMargin: "-9px", closeBoxImage: "", url: "http://vgym.bg/" }; var boxStyles = { "background": "#ffffff", "opacity": " 0.85", "width": " 280px", "height": "100px", "border": " 1px solid grey", "borderRadius": "3px", "padding": " 10px", "boxShadow": "30px 10px 10px 1px grey" }; var markersCode = "W3sibWFya2VyVGl0bGUiOiJWR3ltIiwibWFya2VyVHlwZSI6ImFkZHJlc3MiLCJtYXJrZXJWYWx1ZSI6ItCh0LDQvSDQodGC0LXRhNCw0L3QviDQn9C70LDQt9CwLCDRg9C70LjRhtCwIOKAntCh0LDQvSDQodGC0LXRhNCw0L3QvuKAnCwg0KHQvtGE0LjRjyIsIm1hcmtlckljb24iOiIiLCJtYXJrZXJTaG93SW5mb1dpbmRvdyI6IjEiLCJtYXJrZXJJbmZvV2luZG93IjoiIn1d"; var stylesCode = "W10="; initializeMap(config, markersCode, stylesCode, boxStyles);</script>
+                            </div>*@
+
+                            </div>
+                        </div>
+                        <div class="cell mp_bottom3 span3 ">
+                            <div class="cell_pad">
+                                <div class="moduletable">
+                                    <h3>Работно време</h3>
+
+
+                                    <div class="hot_hours" id="hours">
+                                        <div>
+                                            <div class="day">Понеделник</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                        <div>
+                                            <div class="day">Вторник</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                        <div>
+                                            <div class="day">Сряда</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                        <div>
+                                            <div class="day">Четвъртък</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                        <div>
+                                            <div class="day">Петък</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                        <div>
+                                            <div class="day">Събота</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                        <div>
+                                            <div class="day">Неделя</div>
+                                            <div class="hours">7:30 - 22:00ч.</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="cell mp_bottom4 span3 ">
+                            <div class="cell_pad">
+                                <div class="moduletable">
+                                    <h3>Галерия</h3>
+                                    <script type="text/javascript">
+                                        $(function () {
+                                            $('#gallery a').lightBox({
+                                                imageLoading: 'http://vgym.bg/modules/mod_hot_lightbox/images/lightbox-ico-loading.gif',
+                                                imageBtnPrev: 'http://vgym.bg/modules/mod_hot_lightbox/images/lightbox-btn-prev.gif',
+                                                imageBtnNext: 'http://vgym.bg/modules/mod_hot_lightbox/images/lightbox-btn-next.gif',
+                                                imageBtnClose: 'http://vgym.bg/modules/mod_hot_lightbox/images/lightbox-btn-close.gif',
+                                                imageBlank: 'http://vgym.bg/modules/mod_hot_lightbox/images/lightbox-blank.gif'
+                                            });
+                                            $('#gallery img').last().css('margin-right', '0px');
+                                        });
+                                    </script>
+
+                                    <div id="gallery">
+                                        <a href="/images/fitness_2 (Medium).jpg"><img src="@Url.Content("~/images/thumb_fitness_2 (Medium).jpg")" alt="lightbox" /></a><a href="/images/fitness_3 (Medium).jpg"><img src="@Url.Content("~/images/thumb_fitness_3 (Medium).jpg")" alt="lightbox" /></a><a href="/images/fitness_4 (Medium).jpg"><img src="@Url.Content("~/images/thumb_fitness_4 (Medium).jpg")" alt="lightbox" /></a><a href="/images/fitness_5 (Medium).jpg"><img src="@Url.Content("~/images/thumb_fitness_5 (Medium).jpg")" alt="lightbox" /></a><a href="/images/fitness_6 (Medium).jpg"><img src="@Url.Content("~/images/thumb_fitness_6 (Medium).jpg")" alt="lightbox" /></a><a href="/images/fitness_7 (Medium).jpg.jpg"><img src="@Url.Content("~/images/thumb_fitness_7 (Medium).jpg")" alt="lightbox" /></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="sparky_full">
+                <footer class="container">
+                    <div id="footer" class="row">
+                        <div class="cell mp_footer span8 ">
+                            <div class="cell_pad">
+                                <div class="moduletable">
+
+                                    <nav class="container_footermenu">
+                                        <ul class="menu standard mnu_footermenu">
+                                            <li class="item-335"><a href="/Home">Начало</a></li>
+                                            <li class="item-336"><a href="/AboutUs">За нас</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="cell mp_copyright span4">
+                            <div class="cell_pad">
+                                <p class="copyright">&copy; 2019 V Gym.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </footer>        <div class="clr"></div>
+            </div>
+        </div>
+        </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
